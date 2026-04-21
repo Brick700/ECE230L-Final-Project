@@ -70,36 +70,36 @@ assign Qnext = (Q==6'd59) ? 6'd0 : sum;
 //6 D-Flip-Flops to hold the memory of the bits, one per bits
 D_Flip_Flop dff0(
     .D(D[0]), //Next value passed into fa
-    .clk(clk),
-    .rst(rst),
+    .Clk(clk),
+    .Rst(rst),
     .Q(Q[0]) //Current value of bit 0
 );
 
 D_Flip_Flop dff1(
     .D(D[1]), //Next value passed into fa
-    .clk(clk),
-    .rst(rst),
+    .Clk(clk),
+    .Rst(rst),
     .Q(Q[1]) //Current value of bit 0
 );
 
 D_Flip_Flop dff2(
     .D(D[2]), //Next value passed into fa
-    .clk(clk),
-    .rst(rst),
+    .Clk(clk),
+    .Rst(rst),
     .Q(Q[2]) //Current value of bit 0
 );
 
 D_Flip_Flop dff3(
     .D(D[3]), //Next value passed into fa
-    .clk(clk),
-    .rst(rst),
+    .Clk(clk),
+    .Rst(rst),
     .Q(Q[3]) //Current value of bit 0
 );
 
 D_Flip_Flop dff4(
     .D(D[4]), //Next value passed into fa
-    .clk(clk),
-    .rst(rst),
+    .Clk(clk),
+    .Rst(rst),
     .Q(Q[4]) //Current value of bit 0
 );
 

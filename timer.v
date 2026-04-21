@@ -15,43 +15,43 @@ wire [5:0] dec;
 //6 D-Flip-Flops to hold the memory of the bits, one per bits
 D_Flip_Flop dff0(
     .D(D[0]), //Next value passed into fa
-    .clk(clk),
-    .rst(rst),
+    .Clk(clk),
+    .Rst(rst),
     .Q(Q[0]) //Current value of bit 0
 );
 
 D_Flip_Flop dff1(
     .D(D[1]),
-    .clk(clk),
-    .rst(rst),
+    .Clk(clk),
+    .Rst(rst),
     .Q(Q[1])
 );
 
 D_Flip_Flop dff2(
     .D(D[2]),
-    .clk(clk),
-    .rst(rst),
+    .Clk(clk),
+    .Rst(rst),
     .Q(Q[2])
 );
 
 D_Flip_Flop dff3(
     .D(D[3]),
-    .clk(clk),
-    .rst(rst),
+    .Clk(clk),
+    .Rst(rst),
     .Q(Q[3])
 );
 
 D_Flip_Flop dff4(
     .D(D[4]),
-    .clk(clk),
-    .rst(rst),
+    .Clk(clk),
+    .Rst(rst),
     .Q(Q[4])
 );
 
 D_Flip_Flop dff5(
     .D(D[5]),
-    .clk(clk),
-    .rst(rst),
+    .Clk(clk),
+    .Rst(rst),
     .Q(Q[5])
 );
 
