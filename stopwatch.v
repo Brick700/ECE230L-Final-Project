@@ -69,45 +69,45 @@ assign Qnext = (Q==6'd59) ? 6'd0 : sum;
 
 //6 D-Flip-Flops to hold the memory of the bits, one per bits
 D_Flip_Flop dff0(
-    .d(D[0]), //Next value passed into fa
+    .D(D[0]), //Next value passed into fa
     .clk(clk),
     .rst(rst),
-    .q(Q[0]) //Current value of bit 0
+    .Q(Q[0]) //Current value of bit 0
 );
 
 D_Flip_Flop dff1(
-    .d(D[1]), //Next value passed into fa
+    .D(D[1]), //Next value passed into fa
     .clk(clk),
     .rst(rst),
-    .q(Q[1]) //Current value of bit 0
+    .Q(Q[1]) //Current value of bit 0
 );
 
 D_Flip_Flop dff2(
-    .d(D[2]), //Next value passed into fa
+    .D(D[2]), //Next value passed into fa
     .clk(clk),
     .rst(rst),
-    .q(Q[2]) //Current value of bit 0
+    .Q(Q[2]) //Current value of bit 0
 );
 
 D_Flip_Flop dff3(
-    .d(D[3]), //Next value passed into fa
+    .D(D[3]), //Next value passed into fa
     .clk(clk),
     .rst(rst),
-    .q(Q[3]) //Current value of bit 0
+    .Q(Q[3]) //Current value of bit 0
 );
 
 D_Flip_Flop dff4(
-    .d(D[4]), //Next value passed into fa
+    .D(D[4]), //Next value passed into fa
     .clk(clk),
     .rst(rst),
-    .q(Q[4]) //Current value of bit 0
+    .Q(Q[4]) //Current value of bit 0
 );
 
 D_Flip_Flop dff5(
-    .d(D[5]), //Next value passed into fa
+    .D(D[5]), //Next value passed into fa
     .clk(clk),
     .rst(rst),
-    .q(Q[5]) //Current value of bit 0
+    .Q(Q[5]) //Current value of bit 0
 );
 
 assign state = Q;

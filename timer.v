@@ -14,45 +14,45 @@ wire [5:0] dec;
 
 //6 D-Flip-Flops to hold the memory of the bits, one per bits
 D_Flip_Flop dff0(
-    .d(D[0]), //Next value passed into fa
+    .D(D[0]), //Next value passed into fa
     .clk(clk),
     .rst(rst),
-    .q(Q[0]) //Current value of bit 0
+    .Q(Q[0]) //Current value of bit 0
 );
 
 D_Flip_Flop dff1(
-    .d(D[1]),
+    .D(D[1]),
     .clk(clk),
     .rst(rst),
-    .q(Q[1])
+    .Q(Q[1])
 );
 
 D_Flip_Flop dff2(
-    .d(D[2]),
+    .D(D[2]),
     .clk(clk),
     .rst(rst),
-    .q(Q[2])
+    .Q(Q[2])
 );
 
 D_Flip_Flop dff3(
-    .d(D[3]),
+    .D(D[3]),
     .clk(clk),
     .rst(rst),
-    .q(Q[3])
+    .Q(Q[3])
 );
 
 D_Flip_Flop dff4(
-    .d(D[4]),
+    .D(D[4]),
     .clk(clk),
     .rst(rst),
-    .q(Q[4])
+    .Q(Q[4])
 );
 
 D_Flip_Flop dff5(
-    .d(D[5]),
+    .D(D[5]),
     .clk(clk),
     .rst(rst),
-    .q(Q[5])
+    .Q(Q[5])
 );
 
 //Decrement logic Q-1
