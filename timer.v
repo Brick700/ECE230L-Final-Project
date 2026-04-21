@@ -21,41 +21,55 @@ D_Flip_Flop dff0(
 );
 
 D_Flip_Flop dff1(
-    .d(D[0]),
+    .d(D[1]),
     .clk(clk),
     .rst(rst),
-    .q(Q[0])
-    
+    .q(Q[1])
 );
 
 D_Flip_Flop dff2(
-    
+    .d(D[2]),
+    .clk(clk),
+    .rst(rst),
+    .q(Q[2])
 );
 
 D_Flip_Flop dff3(
-    
+    .d(D[3]),
+    .clk(clk),
+    .rst(rst),
+    .q(Q[3])
 );
 
 D_Flip_Flop dff4(
-    
+    .d(D[4]),
+    .clk(clk),
+    .rst(rst),
+    .q(Q[4])
 );
 
 D_Flip_Flop dff5(
-    
+    .d(D[5]),
+    .clk(clk),
+    .rst(rst),
+    .q(Q[5])
 );
 
-//Decrenebt logic Q-1
+//Decrement logic Q-1
 
-dec[0]
-dec[1]
-dec[2]
-dec[3]
-dec[4]
-dec[5]
-
-
+assign dec[0] = ~Q[0];
+assign dec[1] = Q[1] ^ ~Q[0];
+assign dec[2] = Q[2] ^ (~Q[1] & ~Q[0]);
+assign dec[3] = Q[3] ^ (~Q[2] & ~Q[1] & ~Q[0]);
+assign dec[4] = Q[4] ^ (~Q[3] & ~Q[2] & ~Q[1] & ~Q[0]);
+assign dec[5] = Q[5] ^ (~Q[4] & ~Q[3] & ~Q[2] & ~Q[1] & ~Q[0]);
 
 
+//next load logic
+assign D = load ? load_value :
+           (Q == 6'd0) ? 6'd0 :
+           en ? dec        : Q;
 
+assign state = Q;
 
 endmodule

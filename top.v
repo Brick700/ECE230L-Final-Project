@@ -53,29 +53,32 @@ wire [5:0] sw_state;
 
 
 //enable signals, stopwatch runs when mode=0 and run, timer runs when mode=1 and run
-wire en_sw =
-wire en_tm = 
+wire en_sw = ~mode & run;
+wire en_tm = mode & run;
 
 
 //Stopwatch Module Instance
 //Use "clk_1Hz" as clock signal to stopwatch and timer modules
 stopwatch stpw_insta(
-    .clk
-    .rst
-    .en
-    .state(sw_state(led[8:3]))
+    .clk(clk_1Hz),
+    .rst(btnC),
+    .en(en_sw),
+    .state(sw_state)
 );
 
 
 //Timer Module Instance
 //Use "clk_1Hz" as clock signal to stopwatch and timer modules
 timer tm_insta(
-    .clk
-    .rst
-    .en
-    .load
-    .load_value
-    .state(tm_state(led[15:10]))
+    .clk(clk_1Hz),
+    .rst(btnC),
+    .en(en_tm),
+    .load(load),
+    .load_value(load_value),
+    .state(tm_state)
 );
+
+assign led[15:10] = tm_state;
+assign led[8:3] = sw_state;
 
 endmodule
