@@ -36,7 +36,7 @@ seven_segment_inf seven_segment_inf_inst (.clk(clk), .rst(btnC), .count(count) ,
 /******** UNCOMMENT & UPDATE THIS SECTION ********/
 //wire "count" feeds in count value to seven segment display. This should be a 6-bit value
 //This will decide if seven segment display shows stopwatch count or timer count
-wire [5:0] count = sw[0] ? tm_state : sw_state;
+wire [5:0] count = sw[0] ? tm_state : sw_state; //If sw[0] is 1, show timer value, if sw[0] = 0, show stopwatch value
 
 /******** UPDATE THIS SECTION ********/
 /******* INITIALIZE STOPWATCH AND TIMER MODULE ***********/
@@ -53,8 +53,8 @@ wire [5:0] sw_state;
 
 
 //enable signals, stopwatch runs when mode=0 and run, timer runs when mode=1 and run
-wire en_sw = ~mode & run;
-wire en_tm = mode & run;
+wire en_sw = ~mode & run; //Stopwatch runs when sw[0] = 0 and sw[1] = 1
+wire en_tm = mode & run; //Timer runs when sw[0] = 1 and sw[1] = 1
 
 
 //Stopwatch Module Instance
@@ -78,7 +78,7 @@ timer tm_insta(
     .state(tm_state)
 );
 
-assign led[15:10] = tm_state;
-assign led[8:3] = sw_state;
+assign led[15:10] = tm_state; //assign led to timer value
+assign led[8:3] = sw_state;  //Assign led to stopwatch value
 
 endmodule

@@ -14,9 +14,9 @@ wire [5:0] Qnext; // Next state logic
 
 //6 full adders to computer 6-bits N+1 with each feed into the next
 full_adder fa0(
-    .A(Q[0]),
-    .B(1'b0),
-    .Cin(1'b1),
+    .A(Q[0]), //Q
+    .B(1'b0), //0
+    .Cin(1'b1), //+1
     .Y(sum[0]),
     .Cout(c0)
 );
@@ -105,15 +105,11 @@ D_Flip_Flop dff4(
 
 D_Flip_Flop dff5(
     .D(D[5]), //Next value passed into fa
-    .clk(clk),
-    .rst(rst),
+    .Clk(clk),
+    .Rst(rst),
     .Q(Q[5]) //Current value of bit 0
 );
 
 assign state = Q;
 
 endmodule
-
-
-
-
